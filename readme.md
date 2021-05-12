@@ -8,6 +8,8 @@
 
 4)git commit -m "enter message here"
 
+5) git push     pushes up to public repo
+
 
 --- working tree -- the file structure
 
@@ -27,3 +29,16 @@ make a connection to github:  ssh -T git@github.com
 adding to remote repository(github):  git remote add origin git@github.com:ChachiMcDev/expense-app-basic.git
 
 initial push to github upstream repo:  git push -u origin main
+
+
+Express Server:
+ node server/server.js
+
+
+
+ Heroku:
+ cmd::  heroku login -i
+ chachimcdev@gmail.com
+ the usual suspect with a bang 
+ cmd:: heroku create "expense-app-chachi"
+
