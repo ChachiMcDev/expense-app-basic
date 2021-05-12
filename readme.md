@@ -41,4 +41,5 @@ Express Server:
  chachimcdev@gmail.com
  the usual suspect with a bang 
  cmd:: heroku create "expense-app-chachi"
+ git push heroku master
 
