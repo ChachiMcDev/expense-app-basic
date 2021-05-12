@@ -40,6 +40,9 @@ Express Server:
  cmd::  heroku login -i
  chachimcdev@gmail.com
  the usual suspect with a bang 
- cmd:: heroku create "expense-app-chachi"
+ cmd:: heroku create "expense-app-basic"
  git push heroku master
+ [[[ git push heroku HEAD:master ]]]
+
+https://expense-app-basic.herokuapp.com/
 
