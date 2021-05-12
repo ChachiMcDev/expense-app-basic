@@ -30,6 +30,8 @@ adding to remote repository(github):  git remote add origin git@github.com:Chach
 
 initial push to github upstream repo:  git push -u origin main
 
+git commit -a  (if only have modified files this will add them to stage)
+
 
 Express Server:
  node server/server.js
@@ -43,6 +45,10 @@ Express Server:
  cmd:: heroku create "expense-app-basic"
  git push heroku master
  [[[ git push heroku HEAD:master ]]]
+ cmd:: heroku server logs
 
 https://expense-app-basic.herokuapp.com/
+
+
+npm install --production
 
