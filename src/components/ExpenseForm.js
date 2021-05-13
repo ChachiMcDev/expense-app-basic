@@ -27,7 +27,7 @@ export default class ExpenseForm extends React.Component {
     };
     onAmountChange = (event) =>{
         const amount = event.target.value;
-        if(!amount || amount.match(/^\d*(\.\d{0,2})?$/)){
+        if(!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)){
             this.setState(()=>({ amount: amount }))
         }
     };
@@ -50,7 +50,7 @@ export default class ExpenseForm extends React.Component {
             console.log('submitted!');
             this.props.onSubmit({
                 description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) * 100,
+                amount: parseFloat(this.state.amount, 10),
                 createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
             })
