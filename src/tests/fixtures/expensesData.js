@@ -20,3 +20,14 @@ export default [{
     amount: 395,
     createdAt: moment(0).add(4, 'days').valueOf()
 }];
+
+
+export const noExpense = []
+
+export const oneExpense = [{
+    id: '0',
+    description: 'yup',
+    note: 'there are some notes here',
+    amount: 195,
+    createdAt: 0
+}]

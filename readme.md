@@ -46,6 +46,7 @@ Express Server:
  git push heroku master
  [[[ git push heroku HEAD:master ]]]
  cmd:: heroku server logs
+ heroku open => to open web page
 
 https://expense-app-basic.herokuapp.com/
 
