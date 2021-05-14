@@ -1,11 +1,7 @@
 
-export default (expenses) => {
-    if (expenses.length === 0) {
-        return 0;
-    } else {
-        const amounts = expenses.map((expense) => (expense.amount));
-        const sum = amounts.reduce((total, amount) => (total + amount));
-        return sum;
-    }
+export default  (expenses) => { 
+    return expenses
+        .map((expense) => (expense.amount))
+        .reduce((total, amount) => (total + amount), 0);    
 }
 
