@@ -16,7 +16,7 @@ export default class ExpenseForm extends React.Component {
             error: ''
         };
     }
-  
+    
     onDescriptionChange = (event)=>{
         const description = event.target.value;
         this.setState(()=>({description: description}));
@@ -35,6 +35,7 @@ export default class ExpenseForm extends React.Component {
         if(createdAt){
             this.setState(({createdAt}))
         }
+      
         
     };
     onFocusChange = ({ focused }) => this.setState({ calendarFocused: focused})

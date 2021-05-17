@@ -56,3 +56,9 @@ npm install --production
 
 *test driven development:  write the test first
 
+
+firebase:  
+ref()  => location,   "location/child_location"
+use update() to update existing values
+use push() to create unique id's
+use ref('referencelocation')remove()  to remove node
