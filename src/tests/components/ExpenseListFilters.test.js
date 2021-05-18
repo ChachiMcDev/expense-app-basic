@@ -15,8 +15,8 @@ beforeEach(() =>{
     wrapper = shallow(<ExpenseListFilters 
                         filters={filters}
                         setTextFilter={setTextFilterSpy} 
-                        sortByDate={sortByDate} 
-                        sortByAmount={sortByAmountSpy} 
+                        setSortByDateFilter={sortByDate} 
+                        setSortByAmountFilter={sortByAmountSpy} 
                         setStartDate={setStartDateSpy}
                         setEndDate={setEndDateSpy}
                        
