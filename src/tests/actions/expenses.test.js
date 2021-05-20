@@ -2,10 +2,11 @@ import { addExpense, removeExpense, editExpense, startAddExpense } from '../../a
 import expenseData from '../fixtures/expensesData';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import expensesData from '../fixtures/expensesData';
+import database from '../../firebase/firebase';
 
-const middlewares = [thunk] // add your middlewares like `redux-thunk`
-const createMockStore = configureStore(middlewares)
+ // add your middlewares like `redux-thunk`
+const createMockStore = configureStore([thunk]);
+
 
 
 //REMOVE_EXPENSE TEST
@@ -55,11 +56,7 @@ test('should return object with type: ADD_EXPENSE', ()=>{
 
 
 test('should setup add expense object with default values', ()=>{
-    const addExpObjDefaultMatch = {
-        type: 'ADD_EXPENSE',
-        expense: expenseData[0]
-    }
-    
+
     const action = addExpense(expenseData[2]);
 
     expect(action).toEqual({
@@ -69,34 +66,86 @@ test('should setup add expense object with default values', ()=>{
 });
 
 
-test('should add expense to database and store', (done) => {
-    const store = createMockStore({});
-    const expenseData = {
-        description: 'Mouse',
-        amount: 2000,
-        note: 'this one is ok i guess',
-        createdAt: 1000
-    }
+//test('should add expense to database and store', (done) => {
+//    const store = createMockStore({});
+//    const expenseA = {
+//        description: 'Mouse',
+//        amount: 2000,
+//        note: 'this one is ok i guess',
+//        createdAt: 1000
+//    }
+//
+//    store.dispatch(startAddExpense(expenseA)).then(() => {
+//        const actions = store.getActions();
+//        console.log(actions)
+//        expect(actions[0]).toEqual({
+//            type: 'ADD_EXPENSE',
+//            expense: {
+//                id: expect.any(String),
+//                ...expenseA
+//            }
+//        });
+//        const createPath = 'expenses/' + actions[0].expense.id
+//        //return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+//        return database.ref(actions[0].expense.id).once('value');
+//    }).then((snapshot) => {
+//        expect(snapshot.val()).toEqual(expenseA);
+//        done();
+//    });
+//});
+//
 
-    store.dispatch(startAddExpense(expenseData)).then(() => {
-        const actions = store.getActions();
-        expect(actions[0].toEqual({
-            
-            type: 'ADD_EXPENSE',
-            expense: {
-                id: expenct.any(String),
-                ...expensesData
-            }
-        }));
-            done();
-    });
-});
 
 
+//
+//test('should add expense to database and store', (done) => {
+//    const store = createMockStore({});
+//    const expenseData = {
+//        description: 'Mouse',
+//        amount: 3000,
+//        note: 'This one is better',
+//        createdAt: 1000
+//    };
+//
+//    store.dispatch(startAddExpense(expenseData)).then(() => {
+//        const actions = store.getActions();
+//        expect(actions[0]).toEqual({
+//            type: 'ADD_EXPENSE',
+//            expense: {
+//                id: expect.any(String),
+//                ...expenseData
+//            }
+//        });
+//
+//      // return database.ref(`expenses/${actions[0].expense.id}`).once('value');
+//      return 'what is happening';
+//
+//    }).then((str) => {
+//        console.log('is this the strring:  ', str)
+//        done();
+//    })
+//    //
+//    
+//});
+//
 test('should add expense with defaults to database and store', () => {
 
 
 });
+       // const ref =  database.ref(`expenses/${actions[0].expense.id}`);
+      //  const ref =  database.ref(createPath);
+        //ref.on('value', (snapshot) => {
+        //    console.log(snapshot.val());
+        //}, (errorObject) => {
+        //    console.log('read failure:', errorObject.code);
+        //})
+
+        //return ref.once('value')
+       // ref.once('value', (snapshot) => {
+       //     console.log(snapshot.val());
+       // }, (errorObject) => {
+       //     console.log('read failure:', errorObject.code);
+       // })
 
 
 //test('should setup add expense object with default values', ()=>{
