@@ -1,64 +1,9 @@
 
-1) git init
-2) git status   shows file structure/ contextual information
-3) git add     adds files to staging area
-3.a) git add .    ***adds everything from changes***
-
-*** git add adds files to staging, things in stage need to be committed ***
-
-4)git commit -m "enter message here"
-
-5) git push     pushes up to public repo
 
 
---- working tree -- the file structure
+***  expense app for tracking basic expenses  ***
 
-git log    view recent commits
+building project requires:
+    node@v10.17.0  ::   (can probably go previous versions but versions past 10.17 will cause headaches)
 
-https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
-
-creating ssh keys w/ git-bash
-::  ssh-keygen -t rsa -b 4096 -C "chachimcdev@gmail.com"
-to verify ssh key pairs exist   ls -a ~/.ssh
-to create/start the ssh agent:  eval "$(ssh-agent -s)"
-
-adding new identity/ add the new key ssh-add ~/.ssh/id_rsa  (using the private file)
-
-make a connection to github:  ssh -T git@github.com
-
-adding to remote repository(github):  git remote add origin git@github.com:ChachiMcDev/expense-app-basic.git
-
-initial push to github upstream repo:  git push -u origin main
-
-git commit -am "commit message"  (if only have modified files this will add them to stage)
-
-
-Express Server:
- node server/server.js
-
-
-
- Heroku:
- cmd::  heroku login -i
- chachimcdev@gmail.com
- the usual suspect with a bang 
- cmd:: heroku create "expense-app-basic"
- git push heroku master
- [[[ git push heroku HEAD:master ]]]
- cmd:: heroku server logs
- heroku open => to open web page
-
-https://expense-app-basic.herokuapp.com/
-
-
-npm install --production
-
-
-*test driven development:  write the test first
-
-
-firebase:  
-ref()  => location,   "location/child_location"
-use update() to update existing values
-use push() to create unique id's
-use ref('referencelocation')remove()  to remove node
+    node-sass@4.13.1    (any node-sass lower than that will break the holy heck out of it)
